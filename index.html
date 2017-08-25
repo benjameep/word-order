@@ -1,0 +1,84 @@
+<head>
+  <style>
+    main {
+      margin: auto;
+      width: 700px;
+      font-family: sans-serif;
+    }
+
+    #divHolder {
+      border: 3px solid #24BEB9;
+      padding: 20px;
+      background-color: #ECF9F8
+    }
+
+    #top {
+      margin: auto;
+      width: 70%;
+    }
+
+    #enterData button {
+      display: block;
+      width: 60px;
+      margin: 0px auto;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      margin: 10px 0px;
+      font-family: sans-serif;
+      border: 3px solid #24BEB9;
+      background-color: #ECF9F8;
+    }
+
+    #note {
+      display: flex;
+      justify-content: center;
+    }
+
+    #overused {
+      background-color: #ECF9F8;
+      padding: 10px;
+    }
+
+    span {
+      width: 20px;
+    }
+
+    #sort{
+      display:flex;
+      justify-content: center;
+    }
+    #sort button{
+      height: 20px;
+      margin: 10px 10px 0px 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="top">
+      <div id="enterData">
+        <textarea id="input" placeholder="Paste your text here"></textarea>
+        <button onclick="init($('#input').val())">GO!</button>
+      </div>
+      <textarea id="usedWords" placeholder="Start typing your rearranged phrase here"></textarea>
+    </div>
+    <div id="divHolder">
+      <canvas id="canvas" width=655 height=300></canvas>
+    </div>
+    <div id="sort">
+      <button onclick="words.formParagraph('alph')">Alphabetical</button>
+      <button onclick="words.formParagraph('orig')">Original</button>
+      <button onclick="words.formParagraph('leng')">Word Length</button>
+    </div>
+    <div id="note">
+      <p>Overused:</p><span></span>
+      <p id="overused"></p>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+</body>
